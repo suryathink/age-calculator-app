@@ -1,4 +1,4 @@
-# Frontend Mentor - Age calculator app
+# Age calculator app
 
 Here is the Deployed Link  - https://age-calculator-app-theta-six.vercel.app/
 
