@@ -2,6 +2,8 @@
 
 Here is the Deployed Link  - https://age-calculator-app-theta-six.vercel.app/
 
+![image](https://github.com/suryathink/age-calculator-app/assets/96377101/b38fdb82-2f06-433c-89e1-7e0dfa95dc89)
+
 
 ## About The Age Calculator App
 
