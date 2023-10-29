@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: hsl(0, 0%, 86%);
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  border-radius: 20px;
+  border-bottom-right-radius: 40%;
+  width: 700px;
+  height: 500px;
+  padding: 50px;
+  background: #fff;
+  position: relative;
+}
+
+.input {
+  display: flex;
+  margin-bottom: 35px;
+}
+
+input {
+  font-size: 32px;
+  width: 150px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-right: 20px;
+  border-radius: 10px;
+  outline: none;
+  letter-spacing: 2px;
+  caret-color: hsl(259, 100%, 65%);
+  border: 1px solid #dcdcdc;
+}
+
+h6 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #716f6f;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: hsl(0, 0%, 86%);
+}
+
+button {
+  background-color: #854dff;
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  right: 50px;
+  margin-top: -32px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: hsl(0, 0%, 8%);
+}
+
+input:focus {
+  border: 0.5px solid hsl(259, 100%, 65%);
+}
+
+.error {
+  font-size: 12px;
+  font-weight: 400;
+  font-style: italic;
+  margin: 5px 0;
+  color: hsl(0, 100%, 67%);
+}
+
+.result h1 {
+  font-size: 60px;
+  font-style: italic;
+}
+.result span {
+  color: hsl(259, 100%, 65%);
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (max-width: 600px) {
+  .content {
+    width: 400px;
+    height: 500px;
+    border-radius: 24px 24px 150px 24px;
+  }
+  input {
+    width: 80px;
+    font-size: 20px;
+  }
+  button {
+    width: 64px;
+    height: 64px;
+    right: 180px;
+  }
+  .result {
+    margin-top: 40px;
+  }
+  .result h1 {
+    font-size: 50px;
+  }
+}/*# sourceMappingURL=styles.css.map */
