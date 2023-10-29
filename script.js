@@ -6,10 +6,31 @@ const monthOut = document.getElementById("monthOut");
 const yearOut = document.getElementById("yearOut");
 const calculateBtn = document.getElementById("calculateBtn");
 
+function isValidDate(day, month, year) {
+  // Check if the month is valid (between 1 and 12)
+  if (month < 1 || month > 12) {
+    return false;
+  }
+
+  // Check if the day is valid for the given month
+  if (day < 1 || day > new Date(year, month, 0).getDate()) {
+    return false;
+  }
+
+  return true;
+}
+
 function calculateAge(dob) {
   var dobArray = dob.split("/"); // Split the input into day, month, and year
+  var userDay = parseInt(dobArray[0]);
+  var userMonth = parseInt(dobArray[1]);
+  var userYear = parseInt(dobArray[2]);
 
-  var userDOB = new Date(dobArray[2], dobArray[1] - 1, dobArray[0]); // Create a Date object with user input
+  if (!isValidDate(userDay, userMonth, userYear)) {
+    return [-1, -1, -1]; // Invalid date, return error values
+  }
+
+  var userDOB = new Date(userYear, userMonth - 1, userDay); // Create a Date object with user input
   var currentDate = new Date(); // Get the current date
 
   var ageInYears = currentDate.getFullYear() - userDOB.getFullYear(); // Calculate the age in years
@@ -32,8 +53,6 @@ function calculateAge(dob) {
     ageInMonths += 12; // Add 12 months
   }
 
-  var result =
-    ageInYears + " years " + ageInMonths + " months " + ageInDays + " days"; // Create the result string
   return [ageInYears, ageInMonths, ageInDays];
 }
 
@@ -45,6 +64,12 @@ calculateBtn.addEventListener("click", () => {
   const DOB = `${Day}/${Month}/${Year}`;
 
   const [ageInYears, ageInMonths, ageInDays] = calculateAge(DOB);
+
+  if (ageInYears === -1 || ageInMonths === -1 || ageInDays === -1) {
+    // Invalid date, show error message
+    alert("Invalid date! Please enter a valid date.");
+    return;
+  }
 
   if (Month > 12 || Month == "") {
     document.getElementById("monthError").textContent = "Must be a Valid Month";
